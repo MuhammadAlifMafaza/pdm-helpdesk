@@ -3,6 +3,7 @@
 Compose utama (`docker-compose.yml`) memakai bridge network standar, sehingga cocok untuk Docker Compose dan Podman Compose di Linux. Konfigurasi memakai mode Laravel **production** (`APP_ENV=production`, `APP_DEBUG=false`). `.env` lokal tidak disimpan di Git.
 
 `compose.podman-wsl.yml` adalah workaround khusus Podman pada WSL yang bridge network-nya bermasalah. Jangan pakai file itu untuk Docker atau deployment Linux.
+Pada workaround tersebut, cache view Blade memakai named volume terpisah agar `touch()` dapat mengubah timestamp file meski source Laravel berada di bind mount Windows.
 
 ## Persiapan
 
@@ -57,4 +58,4 @@ docker compose exec php php artisan migrate:status
 docker compose down
 ```
 
-`down` mempertahankan named volumes. Hindari `down -v` kecuali memang bermaksud menghapus data database dan dependency. Backup database secara rutin sebelum menjalankan migration.
+`down` mempertahankan named volumes. Hindari `down -v` kecuali memang bermaksud menghapus data database dan dependency. Volume view cache aman dihapus jika perlu, tetapi jangan menghapus volume database. Backup database secara rutin sebelum menjalankan migration.

@@ -8,6 +8,7 @@ services:
       dockerfile: Dockerfile
     image: localhost/helpdesk-php:latest
     restart: unless-stopped
+    command: ["sh", "-lc", "chown -R www-data:www-data /var/www/html/storage/framework/views && exec php-fpm"]
     network_mode: pasta
     ports:
       - "127.0.0.1:8082:80"
@@ -20,6 +21,7 @@ services:
     volumes:
       - ./src:/var/www/html
       - vendor_data:/var/www/html/vendor
+      - view_cache_data:/var/www/html/storage/framework/views
     post_start:
       - command: chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
         user: root
@@ -104,4 +106,5 @@ services:
 volumes:
   vendor_data:
   node_modules_data:
+  view_cache_data:
   helpdesk_mysql_data:
