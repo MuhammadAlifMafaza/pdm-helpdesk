@@ -1,0 +1,451 @@
+/* ============================================================
+   HELPDESK - TIKET CHAT
+   ============================================================ */
+
+.helpdesk-chat {
+    width: 100%;
+}
+
+/* ============================================================
+   CHAT CONTAINER
+   ============================================================ */
+
+.helpdesk-chat__container {
+    width: 100%;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+/* ============================================================
+   CHAT HEADER
+   ============================================================ */
+
+.helpdesk-chat__header {
+    padding: 16px 18px;
+    border-bottom: 1px solid #e5e7eb;
+    background: #f9fafb;
+}
+
+.helpdesk-chat__header-title {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    color: #111827;
+}
+
+.helpdesk-chat__header-description {
+    margin-top: 2px;
+    font-size: 12px;
+    line-height: 18px;
+    color: #6b7280;
+}
+
+/* ============================================================
+   MESSAGE AREA
+   ============================================================ */
+
+.helpdesk-chat__messages {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    max-height: 450px;
+    overflow-y: auto;
+
+    padding: 16px;
+
+    background: #fafafa;
+}
+
+/* ============================================================
+   MESSAGE
+   ============================================================ */
+
+.helpdesk-chat__message {
+    display: flex;
+    width: 100%;
+}
+
+.helpdesk-chat__message--mine {
+    justify-content: flex-end;
+}
+
+.helpdesk-chat__message--other {
+    justify-content: flex-start;
+}
+
+/* ============================================================
+   MESSAGE CARD
+   ============================================================ */
+
+.helpdesk-chat__card {
+    width: min(85%, 700px);
+
+    padding: 12px 14px;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+
+    background: #ffffff;
+
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.helpdesk-chat__message--mine .helpdesk-chat__card {
+    border-color: #bfdbfe;
+    background: #eff6ff;
+}
+
+/* ============================================================
+   USER HEADER
+   ============================================================ */
+
+.helpdesk-chat__user {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.helpdesk-chat__identity {
+    min-width: 0;
+}
+
+.helpdesk-chat__name {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 18px;
+    color: #111827;
+}
+
+.helpdesk-chat__message--mine .helpdesk-chat__name {
+    color: #1d4ed8;
+}
+
+.helpdesk-chat__meta {
+    margin-top: 2px;
+
+    font-size: 11px;
+    line-height: 16px;
+
+    color: #6b7280;
+}
+
+/* ============================================================
+   ROLE BADGE
+   ============================================================ */
+
+.helpdesk-chat__role {
+    display: inline-block;
+
+    margin-left: 5px;
+    padding: 1px 6px;
+
+    border-radius: 5px;
+
+    font-size: 10px;
+    font-weight: 500;
+
+    background: #f3f4f6;
+    color: #4b5563;
+}
+
+.helpdesk-chat__message--mine .helpdesk-chat__role {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+/* ============================================================
+   MESSAGE CONTENT
+   ============================================================ */
+
+.helpdesk-chat__content {
+    margin-top: 10px;
+
+    padding: 10px 12px;
+
+    border: 1px solid #f3f4f6;
+    border-radius: 9px;
+
+    background: #f9fafb;
+
+    font-size: 13px;
+    line-height: 20px;
+
+    color: #374151;
+
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.helpdesk-chat__message--mine .helpdesk-chat__content {
+    border-color: #dbeafe;
+    background: #ffffff;
+}
+
+/* ============================================================
+   EMPTY STATE
+   ============================================================ */
+
+.helpdesk-chat__empty {
+    padding: 40px 20px;
+
+    text-align: center;
+
+    border: 1px dashed #d1d5db;
+    border-radius: 10px;
+
+    background: #ffffff;
+}
+
+.helpdesk-chat__empty-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #4b5563;
+}
+
+.helpdesk-chat__empty-description {
+    margin-top: 4px;
+
+    font-size: 12px;
+    line-height: 18px;
+
+    color: #9ca3af;
+}
+
+/* ============================================================
+   COMPOSER
+   ============================================================ */
+
+.helpdesk-chat__composer {
+    padding: 14px 16px;
+
+    border-top: 1px solid #e5e7eb;
+
+    background: #ffffff;
+}
+
+.helpdesk-chat__composer-label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    color: #374151;
+}
+
+.helpdesk-chat__composer-form {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+/* ============================================================
+   TEXTAREA
+   ============================================================ */
+
+.helpdesk-chat__textarea {
+    flex: 1;
+
+    min-height: 42px;
+    max-height: 120px;
+
+    resize: vertical;
+
+    padding: 9px 11px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 9px;
+
+    background: #ffffff;
+
+    font-size: 13px;
+    line-height: 19px;
+
+    color: #111827;
+
+    outline: none;
+}
+
+.helpdesk-chat__textarea:focus {
+    border-color: #3b82f6;
+
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.12);
+}
+
+/* ============================================================
+   SEND BUTTON
+   ============================================================ */
+
+.helpdesk-chat__send {
+    display: inline-flex;
+
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 0;
+    border-radius: 9px;
+
+    background: #2563eb;
+
+    color: #ffffff;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.15s ease,
+        opacity 0.15s ease;
+}
+
+.helpdesk-chat__send:hover {
+    background: #1d4ed8;
+}
+
+.helpdesk-chat__send:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.helpdesk-chat__send svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* ============================================================
+   HELPER TEXT
+   ============================================================ */
+
+.helpdesk-chat__helper {
+    margin-top: 6px;
+
+    font-size: 11px;
+    line-height: 16px;
+
+    color: #9ca3af;
+}
+
+/* ============================================================
+   CLOSED
+   ============================================================ */
+
+.helpdesk-chat__closed {
+    padding: 14px 16px;
+
+    border-top: 1px solid #e5e7eb;
+
+    background: #ffffff;
+}
+
+.helpdesk-chat__closed-box {
+    padding: 11px 13px;
+
+    border: 1px dashed #d1d5db;
+    border-radius: 9px;
+
+    background: #f9fafb;
+
+    font-size: 12px;
+
+    color: #6b7280;
+
+    text-align: center;
+}
+
+/* ============================================================
+   DARK MODE
+   ============================================================ */
+
+.dark .helpdesk-chat__container {
+    border-color: #374151;
+    background: #111827;
+}
+
+.dark .helpdesk-chat__header {
+    border-color: #374151;
+    background: #1f2937;
+}
+
+.dark .helpdesk-chat__header-title {
+    color: #f9fafb;
+}
+
+.dark .helpdesk-chat__header-description {
+    color: #9ca3af;
+}
+
+.dark .helpdesk-chat__messages {
+    background: #111827;
+}
+
+.dark .helpdesk-chat__card {
+    border-color: #374151;
+    background: #1f2937;
+}
+
+.dark .helpdesk-chat__message--mine .helpdesk-chat__card {
+    border-color: #1e40af;
+    background: #172554;
+}
+
+.dark .helpdesk-chat__name {
+    color: #f9fafb;
+}
+
+.dark .helpdesk-chat__message--mine .helpdesk-chat__name {
+    color: #93c5fd;
+}
+
+.dark .helpdesk-chat__content {
+    border-color: #374151;
+    background: #111827;
+    color: #e5e7eb;
+}
+
+.dark .helpdesk-chat__message--mine .helpdesk-chat__content {
+    border-color: #1e3a8a;
+    background: #172033;
+}
+
+.dark .helpdesk-chat__composer {
+    border-color: #374151;
+    background: #111827;
+}
+
+.dark .helpdesk-chat__composer-label {
+    color: #d1d5db;
+}
+
+.dark .helpdesk-chat__textarea {
+    border-color: #4b5563;
+    background: #1f2937;
+    color: #f9fafb;
+}
+
+.dark .helpdesk-chat__empty {
+    border-color: #4b5563;
+    background: #1f2937;
+}
+
+.dark .helpdesk-chat__empty-title {
+    color: #d1d5db;
+}
+
+.dark .helpdesk-chat__closed {
+    border-color: #374151;
+    background: #111827;
+}
+
+.dark .helpdesk-chat__closed-box {
+    border-color: #4b5563;
+    background: #1f2937;
+}

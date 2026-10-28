@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans:
+        "Instrument Sans", ui-sans-serif, system-ui, sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+        "Noto Color Emoji";
+}
+
+/* =========================================================
+   Helpdesk — Native Filament Notification Badge
+   ========================================================= */
+
+.fi-no-database
+    .fi-topbar-database-notifications-btn
+    .fi-icon-btn-badge-ctn
+    > .fi-badge {
+    background-color: #ef4444 !important;
+    color: #ffffff !important;
+    border: 1px solid #ffffff !important;
+    font-weight: 700 !important;
+}
